@@ -8,6 +8,8 @@ body {
   display: grid;
   -ms-grid-columns: (220px)[auto-fit];
       grid-template-columns: repeat(auto-fit, 220px);
+  -ms-grid-rows: (260px)[5];
+      grid-template-rows: repeat(5, 260px);
   justify-items: center;
   grid-gap: 10px;
   -webkit-box-pack: center;
@@ -27,6 +29,11 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   border-radius: 10px;
+  width: 100%;
+  height: 287px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 10px 16px;
   -webkit-transition: border-radius 1s, -webkit-transform 1s;
   transition: border-radius 1s, -webkit-transform 1s;
   transition: transform 1s, border-radius 1s;
@@ -36,8 +43,8 @@ body {
 .person:hover {
   border-radius: 12px;
   background-color: #eee;
-  -webkit-transform: scale(1.2, 1.2);
-          transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
   z-index: 2;
 }
 
@@ -45,24 +52,22 @@ body {
   visibility: visible;
 }
 
-.person:hover .photo {
-  margin: 0 0 8px;
-}
-
 .person:hover .photo img {
   border-radius: 60px;
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
 }
 
 .photo {
   position: relative;
-  margin: 10px 10px 8px;
-  -webkit-transition: margin 1s;
-  transition: margin 1s;
+  margin-bottom: 9px;
 }
 
 .photo img {
-  -webkit-transition: border-radius 1s;
-  transition: border-radius 1s;
+  -webkit-transition: border-radius 1s, -webkit-transform 1s;
+  transition: border-radius 1s, -webkit-transform 1s;
+  transition: border-radius 1s, transform 1s;
+  transition: border-radius 1s, transform 1s, -webkit-transform 1s;
   height: 200px;
   width: 200px;
   border-radius: 200px;
@@ -83,7 +88,6 @@ body {
 
 .details {
   text-align: center;
-  margin-bottom: 16px;
 }
 
 .details .name {

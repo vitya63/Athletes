@@ -6,6 +6,7 @@ body {
 .people {
   display: grid;
   grid-template-columns: repeat(auto-fit, 220px);
+  grid-template-rows: repeat(5, 260px);
   justify-items: center;
   grid-gap: 10px;
   justify-content: center;
@@ -18,12 +19,16 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  width: 100%;
+  height: 287px;
+  box-sizing: border-box;
+  padding: 10px 10px 16px;
   transition: transform 1s, border-radius 1s;
 
   &:hover {
     border-radius: 12px;
     background-color: #eee;
-    transform: scale(1.2, 1.2);
+    transform: scale(1.1, 1.1); 
     z-index: 2;
 
     .extra {
@@ -31,9 +36,9 @@ body {
     }
 
     .photo {
-      margin: 0 0 8px;
       img {
         border-radius: 60px;
+        transform: scale(1.1, 1.1);
       }
     }
   }
@@ -41,11 +46,10 @@ body {
 
 .photo {
   position: relative;
-  margin: 10px 10px 8px;
-  transition: margin 1s;
+  margin-bottom: 9px;
 
   img {
-    transition: border-radius 1s;
+    transition: border-radius 1s, transform 1s;
     height: 200px;
     width: 200px;
     border-radius: 200px;
@@ -67,7 +71,6 @@ body {
 
 .details {
   text-align: center;
-  margin-bottom: 16px;
 
   .name {
     font-size: 20px;
